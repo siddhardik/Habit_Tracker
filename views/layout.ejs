@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title><%= title%></title>
+    <!-- noty.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <!-- awesome fontsq link -->
+    <script src="https://kit.fontawesome.com/f383b6eabf.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+        <!-- From here body , css link , js will be placed in proper place  -->
+        <%- body %>
+        
+
+    <script>
+        <% if(flash.success && flash.success.length>0) {%>
+            new Noty({
+                theme : 'sunset',
+                text: '<%=flash.success%>',
+                layout: 'topRight',
+                timeout:2500
+            }).show()
+        <% } %>
+        <% if(flash.error && flash.error.length>0) {%>
+            new Noty({
+                theme : 'sunset',
+                text: '<%=flash.error%>',
+                type: 'error',
+                layout: 'bottomRight',
+                timeout:2500
+            }).show()
+        <% } %>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+body {
+    background-image: url(../img/SignUp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.sign_up{
+	height: 400px;
+	width:30vw;
+	min-width: 360px;
+    margin:auto;
+    margin-top: 5%;
+    background-color:rgb(11, 243, 243);
+    border-radius: 10%;
+    text-align: center;
+    padding: 2%;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+input{
+	width: 45%;
+	min-width: 250px;
+	height: 20px;
+	
+	display: flex;
+	margin: 10px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+button:hover
+ {
+  
+scale: 1.2;
+}
+
+
+button{
+	width: 100px;
+	background-color: #fff;
+	font-family: monospace;
+	font-weight:600;
+	font-size:x-large;
+	color: white;
+	margin :auto;
+	cursor: pointer;
+	border: 3px solid white !important;
+	border-radius: 4px;
+	background-color: black;
+}
+
+a{
+	color: #4b0ff1;
+	font-family: 'Courier New', Courier, monospace;
+}

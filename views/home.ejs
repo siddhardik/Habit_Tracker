@@ -1,0 +1,71 @@
+ <link rel="stylesheet" href="/css/home.css">
+ 
+ <!-- header  -->
+<%- include('_header'); %>
+
+<div>
+    <!-- Userless Home Page -->
+    <% if(!locals.user) { %>
+       
+        <div class="quote">
+            A habit cannot be tossed out the window; it must be coaxed down the stairs a step at a time.
+        </div>
+        <form action="/users/sign-up" method="GET">
+            <button class="get_start btn">Get Started</button>
+        </form>
+    <% }
+
+    <!-- UserExit But HabitLess Home Page   -->
+    else if(locals.user && locals.habits.length==0) { %>
+    <%= habits %>
+        <div class="quote">And once you understand that
+             habits can change, you have the freedom and the responsibility to remake them.
+             <br>
+            So, Start Tracking Your Habit!</div>
+        <!-- button to open add habit form  -->
+        <button class="add_habit btn" onclick="openForm()" >Add Habit ➕</button>
+        <div class="form-popup" id="myForm">
+            <form action="/users/habit/create-habit" id="createHabit" method="POST" class="form-container">
+                <input type="text" name="title" placeholder="Enter habit title" required>
+                <input type="text" name="desc" placeholder="Description">
+                <button type="reset" id="cancel-btn" onclick="closeForm()">Cancel</button>
+                <button type="submit" id="save-btn">Save</button>
+            </form>
+        </div>
+    <% }
+    
+    <!-- Show Habit  -->
+    else { %>
+        <div>
+            <div>
+                
+                <!-- weekly view -->
+                <%- include('weekly_view'); %>
+                
+                <!-- daily view  -->
+                <%- include('daily_view'); %>
+
+            </div>
+
+
+            <!-- button to open add habit form  -->
+            <button id="open-btn" class="button-30" onclick="openForm()" > + Add Habit</button>
+            <div class="form-popup" id="myForm">
+                <form action="/users/habit/create-habit" id="createHabit" method="POST" class="form-container">
+                    <input type="text" name="title" placeholder="Enter habit title" required>
+                    <input type="text" name="desc" placeholder="Description">
+                    <button type="reset" id="cancel-btn" onclick="closeForm()">Cancel</button>
+                    <button type="submit" id="save-btn">Save</button>
+                </form>
+            </div>
+            <!-- button to toggle between daily/weekly view -->
+            <button id="change-view" class="btn" onclick="changeView()" > Show Daily</button>
+        </div>
+    <% } %>
+</div>
+
+
+
+
+<!-- importing this script to open/close form -->
+<script src="/js/home.js"></script>
