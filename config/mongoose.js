@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 // storing the db on mongo atlas , First Testing with local
-const DB = "mongodb://127.0.0.1:27017/Habbit_Tracker-db";
+const MongoURL = "mongodb+srv://siddharthabhunia2001:6mUZEdhUVCesQXvv@cluster0.hnvkgac.mongodb.net/?retryWrites=true&w=majority";
 
 
-mongoose.connect(DB).then(()=>{
+mongoose.connect(MongoURL).then(()=>{
     console.log('Connection successful!');
 }).catch((err) => console.log("no connection " + err));
 

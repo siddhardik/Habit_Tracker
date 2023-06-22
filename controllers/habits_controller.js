@@ -1,6 +1,4 @@
 const Habit = require('../models/habit');
-const User = require('../models/user');
-
 // this function creates a new habit
 module.exports.createHabit = async function(req, res) {
     try {

@@ -1,5 +1,4 @@
 // const Post = require('../models/post');
-const User = require('../models/user');  // Need to delete this line 
 const Habit = require('../models/habit');
 
 

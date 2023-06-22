@@ -44,7 +44,7 @@ app.use(session({
     store: MongoStore.create(
         {
            // Mongo Atlas URL should be given instaead of local
-            mongoUrl: "mongodb://127.0.0.1:27017/Habbit_Tracker-db" ,
+            mongoUrl:"mongodb+srv://siddharthabhunia2001:6mUZEdhUVCesQXvv@cluster0.hnvkgac.mongodb.net/?retryWrites=true&w=majority",
             autoRemover : 'disabled'
         },
         function(err){
